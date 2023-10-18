@@ -1,6 +1,6 @@
 Hello World!
   
-Devlog 1  
-Devlog 2  
-Devlog 3  
-TESTS PASS!  
+Devlog a  
+Devlog b  
+Devlog c  
+TESTS PASS!
