@@ -1,0 +1,772 @@
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git
+$ git clone https://github.com/Andrew-McCall/Avanade2
+Cloning into 'Avanade2'...
+warning: You appear to have cloned an empty repository.
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git
+$ cd Avanade2
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git remote
+origin
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git status
+On branch main
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ echo "Hello World!" > ReadMe.md
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ touch .gitignore
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ ls
+ReadMe.md
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ ls -a
+./  ../  .git/  .gitignore  ReadMe.md
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        ReadMe.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git add .
+warning: in the working copy of 'ReadMe.md', LF will be replaced by CRLF the next time Git touches it
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   ReadMe.md
+
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git commit -m "Inital Commit"
+[main (root-commit) d0d41a3] Inital Commit
+ 2 files changed, 1 insertion(+)
+ create mode 100644 .gitignore
+ create mode 100644 ReadMe.md
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 274 bytes | 274.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Andrew-McCall/Avanade2
+ * [new branch]      main -> main
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git branch dev
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git checkout dev
+Switched to branch 'dev'
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git push
+fatal: The current branch dev has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin dev
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git push -u origin dev
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'dev' on GitHub by visiting:
+remote:      https://github.com/Andrew-McCall/Avanade2/pull/new/dev
+remote:
+To https://github.com/Andrew-McCall/Avanade2
+ * [new branch]      dev -> dev
+branch 'dev' set up to track 'origin/dev'.
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git push
+Everything up-to-date
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ cat ReadMe.md
+Hello World!
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 684 bytes | 4.00 KiB/s, done.
+From https://github.com/Andrew-McCall/Avanade2
+   d0d41a3..6d5334a  dev        -> origin/dev
+Updating d0d41a3..6d5334a
+Fast-forward
+ ReadMe.md | 2 ++
+ 1 file changed, 2 insertions(+)
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ cat ReadMe.md
+Hello World!
+
+Devlog 1
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git checkout -b feature1
+Switched to a new branch 'feature1'
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature1)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git merge dev
+Updating d0d41a3..6d5334a
+Fast-forward
+ ReadMe.md | 2 ++
+ 1 file changed, 2 insertions(+)
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Andrew-McCall/Avanade2
+   d0d41a3..6d5334a  main -> main
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git log --oneline
+6d5334a (HEAD -> main, origin/main, origin/dev, feature1, dev) Update ReadMe.md
+d0d41a3 Inital Commit
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ cat .gitignore
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ mkdir Logs
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ ls
+Logs/  ReadMe.md
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ cd Logs/
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2/Logs (main)
+$ touch log25832532 log06958623 log583258
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2/Logs (main)
+$ ls
+log06958623  log25832532  log583258
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2/Logs (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ./
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2/Logs (main)
+$ cd ..
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Logs/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git add .
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Logs/log06958623
+        new file:   Logs/log25832532
+        new file:   Logs/log583258
+
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ nano .gitignore
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ cat .gitignore
+/Log
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ nano .gitignore
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Logs/log06958623
+        new file:   Logs/log25832532
+        new file:   Logs/log583258
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git restore --staged .
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ ls -r
+ReadMe.md  Logs/
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ ls ./Logs
+log06958623  log25832532  log583258
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ touch ./Logs/loghshgi4weihg
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ cat .gitignore
+/Logs
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git add .
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+g
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   .gitignore
+
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git commit -m "Created a git ignore"
+[main 39dba94] Created a git ignore
+ 1 file changed, 1 insertion(+)
+g
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 292 bytes | 292.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Andrew-McCall/Avanade2
+   6d5334a..39dba94  main -> main
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ touch ./Logs/log32552325235
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ nano .gitignore
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ nano .gitignore
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git add .
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+g
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git commit -m "Added 'hiden files' to git ignore"
+g[main ed1108f] Added 'hiden files' to git ignore
+ 1 file changed, 3 insertions(+)
+i
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 321 bytes | 321.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Andrew-McCall/Avanade2
+   39dba94..ed1108f  main -> main
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ touch .env
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ ls
+Logs/  ReadMe.md
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ ls - a
+ls: cannot access '-': No such file or directory
+ls: cannot access 'a': No such file or directory
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ ls -a
+./  ../  .env  .git/  .gitignore  Logs/  ReadMe.md
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ cat .gitignore
+/Logs
+
+.*
+!.gitignore
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ nano
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git branch
+  dev
+  feature1
+* main
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git checkout debv
+error: pathspec 'debv' did not match any file(s) known to git
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git checkout dev
+Switched to branch 'dev'
+Your branch is up to date with 'origin/dev'.
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git merge main
+Updating 6d5334a..ed1108f
+Fast-forward
+ .gitignore | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Andrew-McCall/Avanade2
+   6d5334a..ed1108f  dev -> dev
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ nano ReadMe.md
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git add .
+g
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git status
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   ReadMe.md
+
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git commit -m "More features"
+[dev 2cb4748] More features
+ 1 file changed, 1 insertion(+)
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 310 bytes | 310.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Andrew-McCall/Avanade2
+   ed1108f..2cb4748  dev -> dev
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git checkout -b feature1
+fatal: a branch named 'feature1' already exists
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git branch -d feature1
+Deleted branch feature1 (was 6d5334a).
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git checkout -b feature1
+Switched to a new branch 'feature1'
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature1)
+$ git push -u origin feature1
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'feature1' on GitHub by visiting:
+remote:      https://github.com/Andrew-McCall/Avanade2/pull/new/feature1
+remote:
+To https://github.com/Andrew-McCall/Avanade2
+ * [new branch]      feature1 -> feature1
+branch 'feature1' set up to track 'origin/feature1'.
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature1)
+$ git checkout deb
+error: pathspec 'deb' did not match any file(s) known to git
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature1)
+$ git checkout dev
+Switched to branch 'dev'
+Your branch is up to date with 'origin/dev'.
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git checkout -b feature2
+Switched to a new branch 'feature2'
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature2)
+$ git push -u origin feature2
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'feature2' on GitHub by visiting:
+remote:      https://github.com/Andrew-McCall/Avanade2/pull/new/feature2
+remote:
+To https://github.com/Andrew-McCall/Avanade2
+ * [new branch]      feature2 -> feature2
+branch 'feature2' set up to track 'origin/feature2'.
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature2)
+$ git checkout dev
+Switched to branch 'dev'
+Your branch is up to date with 'origin/dev'.
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git checkout -b feature3
+Switched to a new branch 'feature3'
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature3)
+$ git push -u origin feature3
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'feature3' on GitHub by visiting:
+remote:      https://github.com/Andrew-McCall/Avanade2/pull/new/feature3
+remote:
+To https://github.com/Andrew-McCall/Avanade2
+ * [new branch]      feature3 -> feature3
+branch 'feature3' set up to track 'origin/feature3'.
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature3)
+$ touch feature3
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature3)
+$ git add .
+g
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature3)
+$ git commit -m "Created x code"
+[feature3 7cccec5] Created x code
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 feature3
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature3)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 314 bytes | 314.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Andrew-McCall/Avanade2
+   2cb4748..7cccec5  feature3 -> feature3
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature3)
+$ git checkout feature2
+Switched to branch 'feature2'
+Your branch is up to date with 'origin/feature2'.
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature2)
+$ touch feature2
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature2)
+$ git add .
+g
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature2)
+$ git commit -m "Feature 2 working"
+[feature2 b42a1e6] Feature 2 working
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 feature2
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature2)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 319 bytes | 319.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Andrew-McCall/Avanade2
+   2cb4748..b42a1e6  feature2 -> feature2
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature2)
+$ git checkout feature1
+Switched to branch 'feature1'
+Your branch is up to date with 'origin/feature1'.
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature1)
+$ nano ReadMe.md
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature1)
+$ git add .
+g
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature1)
+$ git commit -m "Created a change"
+[feature1 7c8aeb5] Created a change
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+gi
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature1)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 311 bytes | 311.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Andrew-McCall/Avanade2
+   2cb4748..7c8aeb5  feature1 -> feature1
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (feature1)
+$ git checkout dev
+Switched to branch 'dev'
+Your branch is up to date with 'origin/dev'.
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ nano ReadMe.md
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git add .
+g
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git commit
+[dev d7a4e5e] Added devlog 3
+ 1 file changed, 1 insertion(+)
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 310 bytes | 310.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Andrew-McCall/Avanade2
+   2cb4748..d7a4e5e  dev -> dev
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git merge feature1
+Auto-merging ReadMe.md
+CONFLICT (content): Merge conflict in ReadMe.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev|MERGING)
+$ nano ReadMe.md
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev|MERGING)
+$ git add .
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev|MERGING)
+$ git commit -m "Fixed merge conflict"
+[dev 438f44e] Fixed merge conflict
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git push
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 222 bytes | 222.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Andrew-McCall/Avanade2
+   d7a4e5e..438f44e  dev -> dev
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git merge feature2
+Merge made by the 'ort' strategy.
+ feature2 | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 feature2
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git merge feature3 -m "Feature3 into dev. I promise i wrote tests"
+Merge made by the 'ort' strategy.
+ feature3 | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 feature3
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 575 bytes | 575.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/Andrew-McCall/Avanade2
+   438f44e..61a37fc  dev -> dev
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ nano ReadMe.md
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git add .
+g
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git commit -m "fixes"
+[dev df32389] fixes
+ 1 file changed, 1 insertion(+)
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 295 bytes | 295.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Andrew-McCall/Avanade2
+   61a37fc..df32389  dev -> dev
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (dev)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git pull
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 636 bytes | 12.00 KiB/s, done.
+From https://github.com/Andrew-McCall/Avanade2
+   ed1108f..ceca9f9  main       -> origin/main
+Updating ed1108f..ceca9f9
+Fast-forward
+ ReadMe.md | 3 +++
+ feature2  | 0
+ feature3  | 0
+ 3 files changed, 3 insertions(+)
+ create mode 100644 feature2
+ create mode 100644 feature3
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$ git log --oneline
+ceca9f9 (HEAD -> main, origin/main) Merge pull request #1 from Andrew-McCall/dev
+df32389 (origin/dev, dev) fixes
+61a37fc Feature3 into dev. I promise i wrote tests
+e984b69 ]Merge branch 'feature2' into dev
+438f44e Fixed merge conflict
+d7a4e5e Added devlog 3
+7c8aeb5 (origin/feature1, feature1) Created a change
+b42a1e6 (origin/feature2, feature2) Feature 2 working
+7cccec5 (origin/feature3, feature3) Created x code
+2cb4748 More features
+ed1108f Added 'hiden files' to git ignore
+39dba94 Created a git ignore
+6d5334a Update ReadMe.md
+d0d41a3 Inital Commit
+
+Work@TALUS MINGW64 /t/Work/Documents/Scripts/QA/Git/Avanade2 (main)
+$
